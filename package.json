@@ -6,14 +6,21 @@
     "@testing-library/jest-dom": "^5.11.5",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+    "node-sass": "^4.14.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-environments": "^1.2.1",
+    "react-redux": "^7.2.1",
     "react-scripts": "4.0.0",
+    "redux": "^4.0.5",
     "web-vitals": "^0.2.4"
   },
   "scripts": {
+    "prestart": "node node_modules/react-environments --path=src/environments",
+    "prebuild": "node node_modules/react-environments --path=src/environments",
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build:dev": "react-scripts build --env=dev",
+    "build:stg": "react-scripts build --env=qa",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -33,6 +40,18 @@
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.5",
+    "enzyme-to-json": "^3.6.1",
+    "redux-mock-store": "^1.5.4"
+  },
+  "jest": {
+    "setupTestFrameworkScriptFile": "<rootDir>__tests__/setup/setupEnzyme.js",
+    "testPathIgnorePatterns": [
+      "<rootDir>/__tests__/setup/"
     ]
   }
 }
