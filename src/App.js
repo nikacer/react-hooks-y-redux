@@ -4,7 +4,7 @@ import { Provider } from "react-redux";
 import store from "./redux/store";
 /** componentes */
 import Counter from "./compoments/counter/Counter";
-import Info from "./compoments/Info";
+import Info from "./compoments/info/Info";
 
 const App = () => {
   return (

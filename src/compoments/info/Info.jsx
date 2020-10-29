@@ -1,6 +1,6 @@
 import React, { useEffect, useState, Fragment } from "react";
 import { connect } from "react-redux";
-import { updateName } from "../redux/action/user.action";
+import { updateName } from "../../redux/action/user.action";
 
 const Info = ({ user: { name }, count, updateName }) => {
   let baseStyle = {
