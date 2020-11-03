@@ -26,6 +26,6 @@ describe("probando componente Info", () => {
         <Info />
       </Provider>
     );
-    console.log(wrapper.html());
+    console.log(wrapper.find(".info-container"));
   });
 });

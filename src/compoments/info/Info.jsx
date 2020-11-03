@@ -42,7 +42,7 @@ const Info = ({ user: { name }, count, updateName }) => {
   return (
     <Fragment>
       <h1>Componente Info</h1>
-      <div style={style}>
+      <div style={style} className="info-container">
         <h1>
           {name} - {count}
         </h1>
