@@ -8,6 +8,10 @@ import Info from "./compoments/info/Info";
 import Refs from "./compoments/refs/Refs";
 import Formulario from "./compoments/formularios/Formulario";
 
+/** UseContext */
+
+import { UserProvider } from "./context/userContext";
+
 const App = () => {
   const send = (data) => {
     console.log(data);
@@ -16,7 +20,10 @@ const App = () => {
     <Provider store={store}>
       <Info />
       <Counter />
-      <Refs />
+      <UserProvider>
+        <Refs />
+      </UserProvider>
+
       <Formulario onSend={send} />
     </Provider>
   );

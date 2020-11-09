@@ -1,11 +1,23 @@
-import React, { useRef, useEffect, Fragment, forwardRef } from "react";
+import React, {
+  useRef,
+  useEffect,
+  Fragment,
+  forwardRef,
+  useContext,
+} from "react";
+import { UserContext } from "../../context/userContext";
 import Chart from "chart.js";
 
 function Refs() {
   const inputExample = useRef(null);
+  let { user, login, logout } = useContext(UserContext);
 
   return (
     <Fragment>
+      {user && <h1>{user.name}</h1>}
+      <button onClick={user ? logout : login}>
+        {user ? "Logout" : "Login"}
+      </button>
       <h1>Graficas</h1>
       <HerenciaRef ref={inputExample} />
     </Fragment>
