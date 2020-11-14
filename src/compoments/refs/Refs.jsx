@@ -15,7 +15,9 @@ function Refs() {
   const inputExample = useRef(null);
   let { user, login, logout } = useContext(UserContext);
   const cambioGrafica = () => {
-    inputExample.current.cambioTitle(Math.random() + " - otro");
+    inputExample.current.cambioTitle(
+      Math.round(Math.random() * 100) + " - otro"
+    );
   };
 
   return (
@@ -26,7 +28,7 @@ function Refs() {
       </button>
       <h1>Graficas</h1>
       <HerenciaRef ref={inputExample} />
-      <button onClick={cambioGrafica}>Cambiar tipo de grafica</button>
+      <button onClick={cambioGrafica}>Cambiar titulo grafica</button>
     </Fragment>
   );
 }
@@ -86,6 +88,7 @@ const HerenciaRef = forwardRef((props, ref) => {
       },
     });
   };
+
   useImperativeHandle(ref, () => ({
     cambioTitle: (newTitle) => {
       graph.options.title.text = newTitle;
