@@ -11,7 +11,7 @@ import Formulario from "./compoments/formularios/Formulario";
 /** UseContext */
 
 import { UserProvider } from "./context/userContext";
-import { UseReducerTest } from "./useReducer/UseReducer";
+import { UseReducerTest } from "./compoments/useReducer/UseReducer";
 
 const App = () => {
   const send = (data) => {
