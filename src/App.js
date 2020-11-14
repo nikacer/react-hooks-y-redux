@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment, useReducer } from "react";
 import { Provider } from "react-redux";
 
 import store from "./redux/store";
@@ -11,21 +11,25 @@ import Formulario from "./compoments/formularios/Formulario";
 /** UseContext */
 
 import { UserProvider } from "./context/userContext";
+import { UseReducerTest } from "./useReducer/UseReducer";
 
 const App = () => {
   const send = (data) => {
     console.log(data);
   };
   return (
-    <Provider store={store}>
-      <Info />
-      <Counter />
-      <UserProvider>
-        <Refs />
-      </UserProvider>
+    <Fragment>
+      <Provider store={store}>
+        <Info />
+        <Counter />
+        <UserProvider>
+          <Refs />
+        </UserProvider>
 
-      <Formulario onSend={send} />
-    </Provider>
+        <Formulario onSend={send} />
+      </Provider>
+      <UseReducerTest />
+    </Fragment>
   );
 };
 
