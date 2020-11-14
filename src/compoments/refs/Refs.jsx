@@ -1,11 +1,9 @@
 import React, {
   useRef,
-  useEffect,
   Fragment,
   forwardRef,
   useContext,
   useImperativeHandle,
-  useState,
   useLayoutEffect,
 } from "react";
 import { UserContext } from "../../context/userContext";
